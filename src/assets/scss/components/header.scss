@@ -1,0 +1,258 @@
+.header {
+  padding-top: 31px;
+
+  &__container {
+    @include flex-all-between;
+    position: relative;
+  }
+
+  &__nav {
+    overflow: hidden;
+
+    &-title {
+      @include adaptive-value('font-size', 40, 25, 1);
+      display: none;
+      font-family: AlumniSans, sans-serif;
+      font-weight: 800;
+      line-height: 93%;
+      text-transform: uppercase;
+      color: #fff;
+
+      @include little-desktop {
+        display: block;
+      }
+    }
+
+    &-list {
+      @include flex-align-center;
+      gap: 44px;
+    }
+
+    &-ellipse {
+      position: absolute;
+      display: none;
+      border-radius: 30px;
+      width: 41px;
+      height: 524px;
+      background: #b3763461;
+      filter: blur(104px);
+
+      &--1,
+      &--2 {
+        bottom: -342px;
+        left: -20px;
+      }
+
+      &--3,
+      &--4 {
+        top: -295px;
+        right: -20px;
+      }
+    }
+
+    @include little-desktop {
+      @include flex-column-all-center;
+
+      @include pre-small-tablet {
+        @include flex-column;
+        align-items: flex-start;
+        justify-content: stretch;
+        padding-top: 100px;
+        padding-left: 60px;
+      }
+
+      &-list {
+        @include flex-column-justify-center;
+      }
+
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 3;
+      gap: 40px;
+      width: 40dvw;
+      height: 100dvh;
+      background: #231f20;
+      opacity: 0;
+      visibility: hidden;
+      transition: left var(--transition), opacity var(--transition),
+        visibility var(--transition);
+
+      &--visible {
+        right: 0;
+        left: auto;
+        border-top-right-radius: 30px;
+        opacity: 1;
+        visibility: visible;
+
+        @include pre-small-tablet {
+        }
+      }
+    }
+
+    &-item {
+      @include adaptive-value('font-size', 14, 13, 1);
+      font-family: Manrope, sans-serif;
+      font-weight: 500;
+      line-height: 120%;
+
+      a {
+        color: #f9f9f9;
+      }
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include desktop {
+      display: none;
+    }
+
+    @include little-desktop {
+      position: static;
+      display: block;
+      transform: none;
+    }
+  }
+
+  &__right {
+    @include flex-align-center;
+    gap: 40px;
+
+    @include little-desktop {
+      gap: 25px;
+    }
+
+    &-socials {
+      @include flex-align-center;
+      gap: 16px;
+
+      @include pre-small-tablet {
+        display: none;
+      }
+    }
+
+    &-vk,
+    &-tg {
+      @include flex-all-center;
+      border: 1px solid #ffffff59;
+      border-radius: 10px;
+      width: 43px;
+      height: 43px;
+      backdrop-filter: blur(70px);
+    }
+
+    &-tel {
+      @include adaptive-value('font-size', 33, 15, 1);
+      font-family: AlumniSans, sans-serif;
+      font-weight: 700;
+      line-height: 80%;
+      color: #fff;
+    }
+
+    &-button {
+      display: flex;
+      border-radius: 10px;
+      padding: 0;
+      padding-right: 17px;
+      padding-left: 17px;
+      background: #d3a168;
+
+      &-text {
+        @include flex-all-center;
+        border-right: 1px solid #15151526;
+        padding: 15px 0;
+        padding-right: 13px;
+        font-family: RoadRadio, sans-serif;
+        font-weight: 700;
+        font-size: 11px;
+        line-height: 13px;
+        color: #fff;
+      }
+
+      &-arrow {
+        @include flex-all-center;
+        padding-left: 17px;
+      }
+    }
+  }
+}
+
+.header__nav.header__nav--visible {
+  .header__nav-ellipse {
+    display: block;
+  }
+
+  .header__nav-link {
+    color: #c8c8c8;
+  }
+}
+
+.header__nav {
+  &-socials {
+    display: none;
+
+    @include pre-small-tablet {
+      display: flex;
+    }
+  }
+}
+
+.overlay {
+  @include little-desktop {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    background: #434343a8;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition), visibility var(--transition);
+    backdrop-filter: blur(16px);
+
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.burger {
+  @include burger;
+}
+
+// .center-cross {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   pointer-events: none;
+//   z-index: 9999;
+// }
+
+// .center-cross::before,
+// .center-cross::after {
+//   content: '';
+//   position: absolute;
+//   background: red;
+// }
+
+// .center-cross::before {
+//   top: 50%;
+//   left: 0;
+//   width: 100%;
+//   height: 1px;
+//   transform: translateY(-50%);
+// }
+
+// .center-cross::after {
+//   top: 0;
+//   left: 50%;
+//   width: 1px;
+//   height: 100%;
+//   transform: translateX(-50%);
+// }

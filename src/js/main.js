@@ -1,3 +1,3 @@
 import '../assets/scss/main.scss';
-
-console.log('Hello' + ' world');
+import { useBurger } from './components/burger';
+useBurger();

@@ -1,7 +1,5 @@
 @import './mixins';
 @import './base';
-@import './globals';
 
-body {
-  background-color: gray;
-}
+// components
+@import './components/header';
