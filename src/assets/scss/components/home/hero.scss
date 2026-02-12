@@ -58,6 +58,7 @@
     @include flex-align-center;
     gap: 58px;
     justify-content: center;
+    margin-bottom: 60px;
   }
 
   &__item {
@@ -120,5 +121,31 @@
       bottom: -29%;
       left: -17%;
     }
+  }
+
+  &__slider.swiper {
+    overflow: visible;
+  }
+
+  &__slider {
+    width: 100%;
+
+    &-viewport {
+      overflow: hidden;
+      margin: 0 auto;
+      width: 1921px;
+    }
+
+    &-logo {
+      position: absolute;
+      z-index: 3;
+      right: -13px;
+      bottom: -150px;
+    }
+  }
+
+  &__slide {
+    overflow: hidden;
+    border-radius: 10px;
   }
 }

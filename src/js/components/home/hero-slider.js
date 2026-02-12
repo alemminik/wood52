@@ -3,6 +3,8 @@ import 'swiper/css';
 
 export const useHeroSlider = () => {
   new Swiper('.hero__slider', {
-    slidesPerView: 'auto',
+    slidesPerView: 4,
+    spaceBetween: 45,
+    loop: true,
   });
 };
