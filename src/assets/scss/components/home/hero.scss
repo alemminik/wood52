@@ -1,16 +1,25 @@
 .hero {
-  padding: 85px 0 60px;
+  @include adaptive-value('padding-top', 85, 40, 1);
+  @include adaptive-value('padding-bottom', 60, 40, 1);
+
+  &__container {
+    position: relative;
+  }
 
   &__title {
+    @include adaptive-value('font-size', 110, 35, 1);
     margin: 0 auto;
-    margin-bottom: 67px;
+    margin-bottom: 49px;
     max-width: 1300px;
     font-family: AlumniSans, sans-serif;
     font-weight: 800;
-    font-size: 110px;
     line-height: 93%;
     text-align: center;
     text-transform: uppercase;
+
+    @include small-tablet {
+      text-align: left;
+    }
 
     span {
       color: #d3a168;
@@ -61,6 +70,9 @@
     &-title {
       display: inline-block;
       margin-bottom: 16px;
+      font-weight: 500;
+      font-size: 17px;
+      letter-spacing: -0.07em;
       color: #d3a168;
 
       span {
@@ -89,6 +101,24 @@
 
     &:nth-child(4) {
       max-width: 228px;
+    }
+  }
+
+  &__ellipse {
+    @include adaptive-value('height', 209, 169, 1);
+    @include adaptive-value('width', 200, 161, 1);
+    position: absolute;
+    background: #d3a168;
+    filter: blur(200px);
+
+    &--1 {
+      top: -30%;
+      right: -17%;
+    }
+
+    &--2 {
+      bottom: -29%;
+      left: -17%;
     }
   }
 }

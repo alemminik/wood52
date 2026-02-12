@@ -71,6 +71,10 @@ label {
   margin: 0 auto;
   padding: 0 var(--container-padding);
   max-width: calc(var(--container-width) + (var(--container-padding) * 2));
+
+  @include mobile {
+    padding: 0 var(--container-mobile-padding);
+  }
 }
 
 .hidden {
