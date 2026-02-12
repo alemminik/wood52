@@ -1,9 +1,35 @@
 .header {
   padding-top: 31px;
 
+  @include little-desktop {
+    margin-top: 5px;
+    padding: 0;
+  }
+
+  @include pre-small-tablet {
+    margin-top: 33px;
+    padding: 0 20px;
+  }
+
+  @include mobile {
+    padding: 0 10px;
+  }
+
   &__container {
     @include flex-all-between;
     position: relative;
+
+    @include pre-small-tablet {
+      border-radius: 53px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      background: #262626;
+      backdrop-filter: blur(53px);
+
+      &:has(.header__nav--visible) {
+        backdrop-filter: none;
+      }
+    }
   }
 
   &__nav {
@@ -12,6 +38,7 @@
     &-title {
       @include adaptive-value('font-size', 40, 25, 1);
       display: none;
+      margin-bottom: 40px;
       font-family: AlumniSans, sans-serif;
       font-weight: 800;
       line-height: 93%;
@@ -21,11 +48,21 @@
       @include little-desktop {
         display: block;
       }
+
+      @include pre-small-tablet {
+        @include adaptive-value('margin-bottom', 40, 13, 1);
+      }
     }
 
     &-list {
       @include flex-align-center;
       gap: 44px;
+
+      @include pre-small-tablet {
+        @include adaptive-value('gap', 44, 10, 1);
+        align-items: flex-start;
+        margin-bottom: 152px;
+      }
     }
 
     &-ellipse {
@@ -50,6 +87,28 @@
       }
     }
 
+    &-address {
+      display: none;
+      margin-bottom: 20px;
+      max-width: 150px;
+      font-family: Manrope, sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 133%;
+      text-align: left;
+      color: #fff;
+
+      span {
+        display: block;
+        font-weight: 500;
+        color: #c8c8c8;
+      }
+
+      @include pre-small-tablet {
+        display: block;
+      }
+    }
+
     @include little-desktop {
       @include flex-column-all-center;
 
@@ -59,17 +118,25 @@
         justify-content: stretch;
         padding-top: 100px;
         padding-left: 60px;
+
+        @include pre-small-mobile {
+          padding-top: 60px;
+          padding-left: 40px;
+        }
+
+        @include small-mobile {
+          padding-top: 46px;
+          padding-left: 24px;
+        }
       }
 
       &-list {
         @include flex-column-justify-center;
       }
-
       position: fixed;
       top: 0;
       right: 0;
       z-index: 3;
-      gap: 40px;
       width: 40dvw;
       height: 100dvh;
       background: #231f20;
@@ -78,15 +145,28 @@
       transition: left var(--transition), opacity var(--transition),
         visibility var(--transition);
 
+      @include small-tablet {
+        width: 45dvw;
+      }
+
+      @include mobile {
+        width: 50dvw;
+      }
+
+      @include pre-mobile {
+        width: 60dvw;
+      }
+
+      @include pre-small-mobile {
+        width: 66dvw;
+      }
+
       &--visible {
         right: 0;
         left: auto;
         border-top-right-radius: 30px;
         opacity: 1;
         visibility: visible;
-
-        @include pre-small-tablet {
-        }
       }
     }
 
@@ -116,6 +196,28 @@
       position: static;
       display: block;
       transform: none;
+    }
+
+    @include pre-small-tablet {
+      width: 92.5px;
+    }
+
+    @include small-tablet {
+      width: 70px;
+    }
+
+    @include pre-mobile {
+      width: 60px;
+    }
+
+    @include pre-small-mobile {
+      width: 50px;
+      height: 38px;
+    }
+
+    @include small-mobile {
+      width: 43px;
+      height: 31px;
     }
   }
 
@@ -178,6 +280,10 @@
         @include flex-all-center;
         padding-left: 17px;
       }
+
+      @include small-tablet {
+        display: none;
+      }
     }
   }
 }
@@ -198,6 +304,25 @@
 
     @include pre-small-tablet {
       display: flex;
+    }
+
+    .header__right-vk {
+      @include adaptive-value('height', 43, 35, 1);
+      @include adaptive-value('width', 43, 35, 1);
+    }
+
+    .header__right-tg {
+      @include adaptive-value('height', 43, 35, 1);
+      @include adaptive-value('width', 43, 35, 1);
+    }
+  }
+
+  &-tel {
+    display: none;
+
+    @include pre-small-tablet {
+      display: block;
+      margin-bottom: 20px;
     }
   }
 }

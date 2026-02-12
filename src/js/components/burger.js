@@ -17,5 +17,17 @@ export const useBurger = () => {
     document.body.classList.toggle('body--fixed');
   });
 
+  document.addEventListener('keydown', (e) => {
+    if (
+      (e.key === 'Escape') &
+      burgerMenu.classList.contains('header__nav--visible')
+    ) {
+      burgerBtn.classList.remove('burger--active');
+      overlay.classList.remove('overlay--visible');
+      burgerMenu.classList.remove('header__nav--visible');
+      document.body.classList.remove('body--fixed');
+    }
+  });
+
   overlay.addEventListener('click', closeBurgerMenu);
 };
