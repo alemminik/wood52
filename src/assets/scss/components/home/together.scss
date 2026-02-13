@@ -1,0 +1,59 @@
+.together {
+  &__inner {
+    @include adaptive-value('padding-left', 78, 17, 1);
+    overflow: hidden;
+    border-radius: 30px;
+    background: url('../../../images/together-img.png') right/contain no-repeat, #353535;
+
+    @include pre-mini-desktop {
+      background-position: 130% 0;
+    }
+
+    @include pre-tablet {
+      background-position: 160% 0;
+    }
+
+    @include tablet {
+      min-height: 900px;
+      background-position: 150% 100%;
+    }
+
+  }
+
+  &__info {
+    @include adaptive-value('gap', 38, 30, 1);
+    @include adaptive-value('padding-bottom', 70, 0, 1);
+    @include adaptive-value('padding-top', 60, 34, 1);
+    display: flex;
+    flex-direction: column;
+    max-width: 715px; 
+
+    @include small-desktop {
+      max-width: 515px;
+    }
+
+    @include pre-mini-desktop {
+      max-width: 450px;
+    }
+  }
+
+  &__title {
+    @include adaptive-value('font-size', 77, 35, 1);
+    font-family: AlumniSans, sans-serif;
+    font-weight: 800;
+    line-height: 87%;
+    text-align: left;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  &__desc {
+    @include adaptive-value('font-size', 19, 15, 1);
+    max-width: 543px;
+    font-family: Manrope, sans-serif;
+    font-weight: 500;
+    line-height: 120%;
+    text-align: left;
+    color: #c8c8c8;
+  }
+}

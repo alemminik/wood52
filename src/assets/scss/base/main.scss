@@ -86,3 +86,40 @@ label {
   opacity: 0;
   visibility: hidden;
 }
+
+.accent-button {
+  @include flex-align-center;
+  @include adaptive-value('font-size', 25, 18, 1);
+  @include adaptive-value('padding-right', 19, 15, 1);
+  @include adaptive-value('padding-left', 28, 22, 1);
+  width: fit-content;
+  border-radius: 10px;
+  padding-top: 0;
+  padding-bottom: 0;
+  max-width: 350px;
+  max-height: 76px;
+  background: #d3a168;
+
+  &-text {
+    @include adaptive-value('font-size', 25, 18, 1);
+    @include adaptive-value('padding-top', 29, 22, 1);
+    @include adaptive-value('padding-bottom', 29, 22, 1);
+    @include adaptive-value('padding-right', 28, 21, 1);
+    border-right: 1px solid #15151526;
+    font-family: AlumniSans, sans-serif;
+    font-weight: 600;
+    line-height: 79.95%;
+    letter-spacing: 0.03em;
+    color: #fff;
+  }
+
+  &-arrow {
+    @include flex-all-center;
+    @include adaptive-value('padding-left', 15.3, 12, 1);
+
+    img {
+      @include adaptive-value('height', 37, 29, 1);
+      @include adaptive-value('width', 37, 29, 1);
+    }
+  }
+}
