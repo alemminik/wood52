@@ -95,22 +95,30 @@
     }
 
     @include pre-small-tablet {
-      position: absolute;
-      top: -14px;
-      right: 0;
+      transform: translateY(-48px) translateX(16px);
+    }
+
+    @include small-tablet {
+      transform: translateY(-38px) translateX(16px);
     }
 
     @include mobile {
-      top: -14px;
-      right: 10px;
+      transform: translateY(-44px) translateX(5px);
+    }
+
+    @include pre-mobile {
+      transform: translateY(-39px) translateX(5px);
     }
 
     @include pre-small-mobile {
       --burger-height: 18px;
       --burger-width: 18px;
       --burger-line-height: 1px;
-      top: -20px;
-      right: 3px;
+      transform: translateY(-37px) translateX(7px);
+    }
+
+    @include small-mobile {
+      transform: translateY(-33px) translateX(7px);
     }
 
     /* stylelint-disable-next-line selector-class-pattern */

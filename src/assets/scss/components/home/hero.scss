@@ -9,7 +9,7 @@
   &__title {
     @include adaptive-value('font-size', 110, 35, 1);
     margin: 0 auto;
-    margin-bottom: 49px;
+    @include adaptive-value('margin-bottom', 49, 40, 1);
     max-width: 1300px;
     font-family: AlumniSans, sans-serif;
     font-weight: 800;
@@ -85,6 +85,7 @@
 
   &__list {
     @include flex-align-center;
+    @include adaptive-value('margin-bottom', 60, 40, 1);
     gap: 58px;
     justify-content: center;
     margin-bottom: 60px;
@@ -94,9 +95,9 @@
     }
 
     &-slider.swiper {
+      @include adaptive-value('margin-bottom', 60, 40, 1);
       display: none;
       overflow: visible;
-      margin-bottom: 60px;
 
       @include mini-desktop {
         display: block;
@@ -152,19 +153,23 @@
     .hero__item {
       max-width: none;
 
-      &--1, &--5 {
+      &--1,
+      &--5 {
         width: 178px !important;
       }
 
-      &--2, &--6 {
+      &--2,
+      &--6 {
         max-width: 155px !important;
       }
 
-      &--3, &--7 {
+      &--3,
+      &--7 {
         max-width: 203px !important;
       }
 
-      &--4, &--8 {
+      &--4,
+      &--8 {
         max-width: 228px !important;
 
         .hero__item-desc {
@@ -180,6 +185,7 @@
     position: absolute;
     background: #d3a168;
     filter: blur(200px);
+    pointer-events: none;
 
     &--1 {
       top: -30%;
@@ -194,6 +200,10 @@
 
   &__slider.swiper {
     overflow: visible;
+
+    @include tablet {
+      overflow: hidden;
+    }
   }
 
   &__slider {
@@ -207,48 +217,13 @@
       border-radius: 10px;
       width: 1921px;
 
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -130px;
-        z-index: 2;
-        width: 220px;
-        height: 100%;
-        background: linear-gradient(
-          to right,
-          #0f0f0f 0%,
-          #0f0f0fe6 15%,
-          #0f0f0fb3 35%,
-          #0f0f0f66 55%,
-          #0f0f0f26 75%,
-          #0f0f0f00 100%
-        );
-        pointer-events: none;
-      }
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: -130px;
-        z-index: 2;
-        width: 220px;
-        height: 100%;
-        background: linear-gradient(
-          to left,
-          #0f0f0f 0%,
-          #0f0f0fe6 15%,
-          #0f0f0fb3 35%,
-          #0f0f0f66 55%,
-          #0f0f0f26 75%,
-          #0f0f0f00 100%
-        );
-        pointer-events: none;
+      @include tablet {
+        width: auto;
       }
     }
 
     &-logo {
+      display: none;
       @include adaptive-value('width', 182, 105, 1);
       @include adaptive-value('height', 182, 105, 1);
       position: absolute;
