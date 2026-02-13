@@ -14,9 +14,10 @@ html {
 
 .body {
   position: relative;
+  contain: paint;
   overflow-x: hidden;
   color: #fff;
-  background-color:var(--background-color);
+  background-color: var(--background-color);
 
   &--fixed {
     overflow-y: hidden;
@@ -74,7 +75,9 @@ label {
 
   @include mobile {
     padding: 0 var(--container-mobile-padding);
-    max-width: calc(var(--container-width) + (var(--container-mobile-padding) * 2));
+    max-width: calc(
+      var(--container-width) + (var(--container-mobile-padding) * 2)
+    );
   }
 }
 
