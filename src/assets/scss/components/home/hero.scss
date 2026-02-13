@@ -4,10 +4,21 @@
 
   &__container {
     position: relative;
+    padding: 0 calc(var(--container-padding) + 16px);
+    max-width: calc(
+      var(--container-width) + ((var(--container-padding) + 16px) * 2)
+    );
+
+    @include mobile {
+      padding: 0 calc(var(--container-mobile-padding) + 16px);
+      max-width: calc(
+        var(--container-width) + ((var(--container-mobile-padding) + 16) * 2)
+      );
+    }
   }
 
   &__title {
-    @include adaptive-value('font-size', 110, 35, 1);
+    @include adaptive-value('font-size', 110, 34, 1);
     margin: 0 auto;
     @include adaptive-value('margin-bottom', 49, 40, 1);
     max-width: 1300px;
@@ -61,7 +72,7 @@
     }
 
     &-text {
-      @include adaptive-value('font-size', 25, 19, 1);
+      @include adaptive-value('font-size', 25, 18, 1);
       border-right: 1px solid #15151526;
       padding: 29px 0;
       padding-right: 28px;
@@ -176,6 +187,20 @@
           max-width: 189px;
         }
       }
+
+      &-desc {
+        line-height: 133%;
+      }
+    }
+
+    &-viewport {
+      overflow: hidden;
+      margin: 0 auto;
+      padding-left: 36px;
+
+      @include mobile {
+        padding-left: 26px;
+      }
     }
   }
 
@@ -216,6 +241,7 @@
       @include adaptive-value('margin-bottom', 49, 37, 1);
       border-radius: 10px;
       width: 1921px;
+      max-width: 100vw;
 
       @include tablet {
         width: auto;
@@ -223,13 +249,25 @@
     }
 
     &-logo {
-      display: none;
       @include adaptive-value('width', 182, 105, 1);
       @include adaptive-value('height', 182, 105, 1);
       position: absolute;
       right: -4px;
       bottom: -151px;
       z-index: 2;
+
+      @include mini-desktop {
+        bottom: -280px;
+      }
+
+      @include small-tablet {
+        bottom: -270px;
+      }
+
+      @include mobile {
+        right: -11px;
+        bottom: -255px;
+      }
     }
   }
 

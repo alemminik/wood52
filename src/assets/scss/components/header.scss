@@ -19,6 +19,11 @@
     @include flex-all-between;
     position: relative;
 
+    @include mobile {
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+
     @include pre-small-tablet {
       border-radius: 53px;
       padding-top: 8px;
@@ -137,13 +142,15 @@
       position: fixed;
       top: 0;
       right: 0;
-      z-index: 3;
+      z-index: 4;
       width: 40dvw;
       height: 100dvh;
       background: #231f20;
       opacity: 0;
       visibility: hidden;
-      transition: left var(--transition), opacity var(--transition),
+      transition:
+        left var(--transition),
+        opacity var(--transition),
         visibility var(--transition);
 
       @include small-tablet {
@@ -332,11 +339,13 @@
   @include little-desktop {
     position: fixed;
     inset: 0;
-    z-index: 2;
+    z-index: 3;
     background: #434343a8;
     opacity: 0;
     visibility: hidden;
-    transition: opacity var(--transition), visibility var(--transition);
+    transition:
+      opacity var(--transition),
+      visibility var(--transition);
     backdrop-filter: blur(16px);
 
     &--visible {

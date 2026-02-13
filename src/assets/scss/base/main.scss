@@ -74,6 +74,7 @@ label {
 
   @include mobile {
     padding: 0 var(--container-mobile-padding);
+    max-width: calc(var(--container-width) + (var(--container-mobile-padding) * 2));
   }
 }
 
