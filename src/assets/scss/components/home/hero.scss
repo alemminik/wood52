@@ -38,8 +38,8 @@
   }
 
   &__button {
+    @include adaptive-value('margin-bottom', 60, 40, 1);
     margin: 0 auto;
-    margin-bottom: 60px;
 
     &--small {
       display: none;
