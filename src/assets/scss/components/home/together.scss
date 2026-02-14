@@ -54,6 +54,8 @@
     }
 
     @include pre-mobile {
+      @include adaptive-value('padding-right', 78, 17, 1);
+
       min-height: 453px;
       background:
         url('../../../images/together-mobile-img.png') right/contain no-repeat,
@@ -118,11 +120,15 @@
     @include big-mobile {
       max-width: 80%;
     }
+
+    @include pre-mobile {
+      max-width: none;
+    }
   }
 
   &__ellipse {
     pointer-events: none;
-    
+
     &--1 {
       @include adaptive-value('width', 310, 58, 1);
       @include adaptive-value('height', 449, 414, 1);
@@ -139,7 +145,7 @@
       }
 
       @include pre-mobile {
-        filter: blur(54px)
+        filter: blur(54px);
       }
     }
 

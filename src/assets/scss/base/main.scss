@@ -90,9 +90,10 @@ label {
 .accent-button {
   @include flex-align-center;
   @include adaptive-value('font-size', 25, 18, 1);
-  @include adaptive-value('padding-right', 19, 15, 1);
+  @include adaptive-value('padding-right', 19, 10, 1);
   @include adaptive-value('padding-left', 28, 22, 1);
   width: fit-content;
+  min-width: 268px;
   border-radius: 10px;
   padding-top: 0;
   padding-bottom: 0;
@@ -104,7 +105,7 @@ label {
     @include adaptive-value('font-size', 25, 18, 1);
     @include adaptive-value('padding-top', 29, 22, 1);
     @include adaptive-value('padding-bottom', 29, 22, 1);
-    @include adaptive-value('padding-right', 28, 21, 1);
+    padding-right: 30px;
     border-right: 1px solid #15151526;
     font-family: AlumniSans, sans-serif;
     font-weight: 600;
