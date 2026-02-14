@@ -38,11 +38,12 @@
   }
 
   &__button {
-    @include adaptive-value('margin-bottom', 60, 40, 1);
     margin: 0 auto;
+    @include adaptive-value('margin-bottom', 60, 40, 1);
 
     &--small {
       display: none;
+      margin-bottom: 0;
     }
 
     @include tablet {
@@ -182,6 +183,7 @@
     &--2 {
       bottom: -29%;
       left: -17%;
+      z-index: 5;
 
       @include pre-mini-desktop {
         bottom: -250px;

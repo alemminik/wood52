@@ -1,9 +1,16 @@
 .together {
+  &__container {
+    position: relative;
+  }
+
   &__inner {
     @include adaptive-value('padding-left', 78, 17, 1);
+    position: relative;
     overflow: hidden;
     border-radius: 30px;
-    background: url('../../../images/together-img.png') right/contain no-repeat, #353535;
+    background:
+      url('../../../images/together-img.png') right/contain no-repeat,
+      #353535;
 
     @include small-desktop {
       background-position: 120%;
@@ -23,7 +30,7 @@
 
     @include mini-tablet {
       background-position: 250%;
-    };
+    }
 
     @include pre-small-tablet {
       background-position: 350%;
@@ -42,20 +49,21 @@
     }
 
     @include pre-big-mobile {
-    background-position: 250px;
-    background-size: 130%;
+      background-position: 250px;
+      background-size: 130%;
     }
 
     @include pre-mobile {
-      min-height: 460px;
-      background: url('../../../images/together-mobile-img.png') right/contain no-repeat, #353535;
+      min-height: 453px;
+      background:
+        url('../../../images/together-mobile-img.png') right/contain no-repeat,
+        #353535;
       background-position: bottom;
     }
 
     @include pre-small-mobile {
       min-height: 426px;
     }
-
   }
 
   &__info {
@@ -64,14 +72,14 @@
     @include adaptive-value('padding-top', 60, 34, 1);
     display: flex;
     flex-direction: column;
-    max-width: 50%; 
+    max-width: 50%;
 
     @include big-mobile {
       max-width: 62%;
     }
 
     @include pre-mobile {
-      padding-bottom: 0;;
+      padding-bottom: 0;
       max-width: none;
     }
   }
@@ -95,8 +103,70 @@
     text-align: left;
     color: #c8c8c8;
 
+    @include pre-mobile {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include pre-mobile {
+        display: block;
+      }
+    }
+
     @include big-mobile {
       max-width: 80%;
+    }
+  }
+
+  &__ellipse {
+    pointer-events: none;
+    
+    &--1 {
+      @include adaptive-value('width', 310, 58, 1);
+      @include adaptive-value('height', 449, 414, 1);
+      position: absolute;
+      bottom: -325px;
+      left: -150px;
+      border-radius: 30px;
+      background: #b3763461;
+      filter: blur(104px);
+
+      @include tablet {
+        bottom: -225px;
+        left: -50px;
+      }
+
+      @include pre-mobile {
+        filter: blur(54px)
+      }
+    }
+
+    &--2 {
+      @include adaptive-value('width', 200, 161, 1);
+      @include adaptive-value('height', 209, 169, 1);
+      position: absolute;
+      right: -250px;
+      bottom: 30px;
+      background: #d3a168a8;
+      filter: blur(150px);
+    }
+
+    &--3 {
+      @include adaptive-value('width', 310, 58, 1);
+      @include adaptive-value('height', 449, 414, 1);
+      position: absolute;
+      top: -200px;
+      right: -30px;
+      display: none;
+      border-radius: 30px;
+      background: #b3763461;
+      filter: blur(54px);
+
+      @include pre-mobile {
+        display: block;
+      }
     }
   }
 }
